@@ -125,24 +125,24 @@ ds = DisplaySequence(log_dir=ds_log_dir, backupdir=ds_backupdir,
 # =================================================================================
 
 # =============================== display =========================================
-ds.set_stim(ks1)
-ds.trigger_display()
-    
-ds.set_stim(ks2)
-ds.trigger_display()
-
-ds.set_stim(ks3)
-ds.trigger_display()
-
-ds.set_stim(ks4)
-ds.trigger_display()
-# plt.show()  #commented by PP
+#ds.set_stim(ks1)
+#ds.trigger_display()
+#
+#ds.set_stim(ks2)
+#ds.trigger_display()
+#
+#ds.set_stim(ks3)
+#ds.trigger_display()
+#
+#ds.set_stim(ks4)
+#ds.trigger_display()
+## plt.show()  #commented by PP
 
 
 ## try loop:
 all_stim = [ks1, ks2, ks3, ks4]
 cs_stim_ind_sequence = [0, 1, 2, 3]
 stim_seq = [all_stim[stim_ind] for stim_ind in cs_stim_ind_sequence]
-    ds.set_stim(stim_seq)
-    ds.trigger_display()
+ds.set_stim(stim_seq)
+ds.trigger_display()
 # =================================================================================
