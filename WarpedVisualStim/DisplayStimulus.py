@@ -402,6 +402,7 @@ class DisplaySequence(object):
                 self.clear()
                 return None
             else:
+                print('you are here 1')
                 time.sleep(5.)  # wait remote object to start
 
         # actual display
