@@ -55,7 +55,7 @@ ds_color_weights = (1., 1., 1.)
 
 # ============================ generic stimulus parameters ========================
 pregap_dur = 0.
-postgap_dur = 0.
+postgap_dur = 3.
 background = 0.
 coordinate = 'degree'
 # =================================================================================
