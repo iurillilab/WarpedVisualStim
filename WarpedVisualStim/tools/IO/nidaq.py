@@ -1976,7 +1976,7 @@ if __name__ == '__main__':
 
     co.start()
     ci.start()
-
+    print("you are here 10\n")
     time.sleep(2)
 
     ci.stop()
@@ -1984,7 +1984,7 @@ if __name__ == '__main__':
 
     ci.clear()
     co.clear()
-
+    print("you are here 11\n")
     time.sleep(2)
 
     import numpy as np

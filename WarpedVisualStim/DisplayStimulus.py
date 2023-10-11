@@ -396,17 +396,20 @@ class DisplaySequence(object):
 
         # handle display trigger
         if self.is_triggered:
+            print("you are here 0\n")
             display_wait = self._wait_for_trigger(event=self.trigger_event)
+            print("you are here 1\n")
             if not display_wait:
                 window.close()
                 self.clear()
                 return None
             else:
-                print("you are here 1\n")
+                print("you are here 2\n")
                 time.sleep(5.)  # wait remote object to start
-
+        print("you are here 3\n")
         # actual display
         self._display(window=window, stim=stim)
+        print("you are here 4\n")
 
         # analyze frames
         try:
@@ -497,6 +500,7 @@ class DisplaySequence(object):
             while self.keep_display:
                 current_TTL = trigger_task.read()[0]
                 if (last_TTL == 0) and (current_TTL == 1):
+                    print("you are here 5\n")
                     break
                 else:
                     last_TTL = int(current_TTL)
@@ -506,6 +510,7 @@ class DisplaySequence(object):
                 print('Keyboard interrupting signal detected. Stopping the program.')
                 return False
             trigger_task.StopTask()
+            print("you are here 6\n")
             print('Trigger detected. Start displaying...\n\n')
             return True
         else:
