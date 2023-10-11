@@ -25,7 +25,7 @@ ind_width_cm = 1.
 ind_height_cm = 1.
 ind_position = 'southeast'
 ind_is_sync = True
-ind_freq = 1.
+ind_freq = 0.6
 # =================================================================================
 
 # ============================ DisplaySequence ====================================
@@ -54,8 +54,8 @@ ds_color_weights = (1., 1., 1.)
 # =================================================================================
 
 # ============================ generic stimulus parameters ========================
-pregap_dur = 0.
-postgap_dur = 0.050 # need this to set trial end
+pregap_dur = 3
+postgap_dur = 3 # need this to set trial end
 background = 0.
 coordinate = 'degree'
 # =================================================================================
@@ -140,9 +140,9 @@ ds.trigger_display()
 
 
 ## try loop:
-#all_stim = [ks1, ks2, ks3, ks4]
-#cs_stim_ind_sequence = [0, 1, 2, 3]
-#stim_seq = [all_stim[stim_ind] for stim_ind in cs_stim_ind_sequence]
-#    ds.set_stim(stim_seq)
-#    ds.trigger_display()
+all_stim = [ks1, ks2, ks3, ks4]
+cs_stim_ind_sequence = [0, 1, 2, 3]
+stim_seq = [all_stim[stim_ind] for stim_ind in cs_stim_ind_sequence]
+    ds.set_stim(stim_seq)
+    ds.trigger_display()
 # =================================================================================
