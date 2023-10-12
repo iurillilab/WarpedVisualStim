@@ -1,0 +1,5 @@
+conda activate warpedvisualstim2
+cd C:\Users\SNeurobiology\Documents\GitHub\WarpedVisualStim\WarpedVisualStim\examples
+python retinotopic_mapping_singleStims.py
+
+

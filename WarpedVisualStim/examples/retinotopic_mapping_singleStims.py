@@ -141,8 +141,9 @@ ds = DisplaySequence(log_dir=ds_log_dir, backupdir=ds_backupdir,
 
 ## try loop:
 all_stim = [ks1, ks2, ks3, ks4]
-cs_stim_ind_sequence = [0, 1, 2, 3]
-stim_seq = [all_stim[stim_ind] for stim_ind in cs_stim_ind_sequence]
-ds.set_stim(stim_seq)
-ds.trigger_display()
+cs_stim_ind_sequence = [1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 0, 0, 1, 2, 3, 2, 3, 1, 1, 1, 0, 0, 2, 3, 3, 2, 3, 0, 2, 0, 3, 2, 1, 1]
+for stim_ind in cs_stim_ind_sequence:
+    stim_seq = all_stim[stim_ind]
+    ds.set_stim(stim_seq)
+    ds.trigger_display()
 # =================================================================================
