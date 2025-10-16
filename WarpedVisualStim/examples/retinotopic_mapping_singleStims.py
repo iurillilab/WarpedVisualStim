@@ -16,7 +16,7 @@ mon_refresh_rate = 60  # enter your monitors height in Hz
 mon_C2T_cm = mon_height_cm / 2.
 mon_C2A_cm = mon_width_cm / 2.
 mon_center_coordinates = (0., 60.)
-mon_dis = 13.5
+mon_dis = 16
 mon_downsample_rate = 5
 # =================================================================================
 
@@ -29,17 +29,17 @@ ind_freq = 0.6
 # =================================================================================
 
 # ============================ DisplaySequence ====================================
-ds_log_dir = r'E:\paola\data'
+ds_log_dir = r'E:\paola\data\vilsualLog'
 ds_backupdir = None
-ds_identifier = 'TEST_triggered'
+ds_identifier = 'retinotopicMapping'
 ds_display_iter = 1.
-ds_mouse_id = 'MOUSE'
+ds_mouse_id = 'M1'
 ds_user_id = 'PP'
 ds_psychopy_mon = 'testMonitor'
 ds_is_by_index = False
 ds_is_interpolate = False
 ds_is_triggered = True
-ds_is_save_sequence = True
+ds_is_save_sequence = False
 ds_trigger_event = "positive_edge"
 ds_trigger_NI_dev = 'Dev6'
 ds_trigger_NI_port = 0
@@ -54,8 +54,8 @@ ds_color_weights = (1., 1., 1.)
 # =================================================================================
 
 # ============================ generic stimulus parameters ========================
-pregap_dur = 3
-postgap_dur = 3 # need this to set trial end
+pregap_dur = 2
+postgap_dur = .5 # need this to set trial end
 background = 0.
 coordinate = 'degree'
 # =================================================================================
@@ -141,7 +141,12 @@ ds = DisplaySequence(log_dir=ds_log_dir, backupdir=ds_backupdir,
 
 ## try loop:
 all_stim = [ks1, ks2, ks3, ks4]
-cs_stim_ind_sequence = [1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 0, 0, 1, 2, 3, 2, 3, 1, 1, 1, 0, 0, 2, 3, 3, 2, 3, 0, 2, 0, 3, 2, 1, 1]
+cs_stim_ind_sequence = [1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 0, 0, 1, 2, 3, 2, 3, 1, 1, 1, 0, 0, 2, 3, 3, 2, 3, 0, 2, 0, 3, 2, 1, 1, 1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 3, 0, 1, 2]
+# rep of 15 in use:
+#[1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 0, 0, 1, 2, 3, 2, 3, 1, 1, 1, 0, 0, 2, 3, 3, 2, 3, 0, 2, 0, 3, 2, 1, 1, 1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 3, 0, 1, 2]
+#
+    #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+#                      [1, 0, 1, 3, 0, 2, 3, 2, 2, 1, 0, 3, 0, 3, 2, 1, 0, 0, 1, 2, 3, 2, 3, 1, 1, 1, 0, 0, 2, 3, 3, 2, 3, 0, 2, 0, 3, 2, 1, 1]
 for stim_ind in cs_stim_ind_sequence:
     stim_seq = all_stim[stim_ind]
     ds.set_stim(stim_seq)
